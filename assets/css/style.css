@@ -1,0 +1,194 @@
+body {
+    font-family: 'Russo One', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    background-color: rgb(250, 244, 237);
+}
+
+.container {
+    box-sizing: border-box;
+    width: 960px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 30px;
+    color: rgb(14, 79, 90);
+}
+
+p {
+    font-family: 'Russo One', sans-serif;
+    font-size: 16px;
+    color: rgb(14, 79, 90);
+}
+
+.gif-wrapper {
+    position: relative;
+    float: left;
+    cursor: pointer;
+    margin: 0 8px 8px 0;
+}
+
+.gif-wrapper:after {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 40px;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    background-image: url("../images/pause.png");
+}
+
+.gif-wrapper:hover:after {
+    display: block;
+}
+
+.gif-wrapper:before {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 40px;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    background-image: url("../images/play.png");
+}
+
+.gif-wrapper.paused:before {
+    display: block;
+}
+
+.gif-wrapper.paused:hover:after {
+    display: none;
+}
+
+.gif-wrapper img[data-state = still] {
+    height: 200px;
+}
+
+.item {
+    background-color: #247e99;
+    color: white;
+    margin-right: 6px;
+    margin-top: 3px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+input {
+    margin-left: 3px;
+}
+
+#add, #fav-page, #back, .del {
+    background-color: #b45267;
+    color: white;
+    margin-left: 6px;
+    margin-top: 3px;
+    border-radius: 3px;
+    font-size: 15px;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+.del {
+    background-color: #b45267;
+    color: white;
+    border-radius: 3px;
+    font-size: 10px;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+#more {
+    background-color: #b45267;
+    color: white;
+    margin-left: 6px;
+    margin-top: 3px;
+    border-radius: 3px;
+    font-size: 15px;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+#gif-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.all i{
+    display: block;
+}
+
+#gif-fav {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fav-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 640px) {
+    .container {
+        width: 100%;
+        padding: 16px;
+    }
+
+    .all {
+        width: 100%;
+    }
+
+    button.item {
+        line-height: 32px;
+        padding: 0 16px;
+    }
+    .gif-wrapper {
+        width: 100%;
+    }
+
+    .gif-wrapper img {
+        width: 100%;
+        height: auto;
+    }
+
+    input {
+        height: 25px;
+    }
+
+    #add, #fav-page {
+        height: 32px;
+    }
+
+    .gif-wrapper img[data-state = still] {
+        height: auto;
+    }
+
+    #gif-fav, #gif-fav .fav-wrap, #gif-fav .fav-wrap img {
+        width: 100%;
+    }
+     
+ }
+
+#gif-fav, #back {
+    display: none;
+}
+
+.container.fav-page #gif-area, .container.fav-page #display, .container.fav-page #fav-page, .container.fav-page p{
+    display: none;
+}
+
+.container.fav-page #back {
+    display: initial;
+}
+
+.container.fav-page #gif-fav {
+    display: flex;
+}
