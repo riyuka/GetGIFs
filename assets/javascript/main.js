@@ -19,7 +19,7 @@ $('#add').on('click', function(){
 
 $(document).on("click", ".item", function() {
     var clickItem = $(this).text();
-    var req ="http://api.giphy.com/v1/gifs/search?q=" + clickItem + "&api_key=PzfKQiXO8B2rwUa78kIqB74sv6qcl0wU&limit=10";
+    var req ="https://api.giphy.com/v1/gifs/search?q=" + clickItem + "&api_key=PzfKQiXO8B2rwUa78kIqB74sv6qcl0wU&limit=10";
     $.ajax({url: req}).then(function(response){
             console.log(response);
             for (var i=0; i<10; i++) {
